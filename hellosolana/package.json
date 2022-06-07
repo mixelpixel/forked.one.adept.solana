@@ -1,0 +1,18 @@
+{
+  "name": "hellosolana",
+  "version": "1.0.0",
+  "description": "https://adept.at/forked/solana-blockchain-development#forked/interact-with-solana-using-web3js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Patrick Kennedy",
+  "license": "ISC",
+  "dependencies": {
+    "@solana/web3.js": "^1.43.4",
+    "base58": "^2.0.1",
+    "bs58": "^5.0.0",
+    "buffer": "^6.0.3",
+    "dotenv": "^16.0.1"
+  }
+}
