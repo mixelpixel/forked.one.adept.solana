@@ -30,6 +30,8 @@ console.log("SOL_TLD_AUTHORITY - ", SOL_TLD_AUTHORITY);
 // WHEN WE SEND A DOMAIN NAME e.g. "knowtrades.sol, THE SNS SHOULD RETURN A PUBLICKEY/ADDRESS (THE DOMAIN NAME OWNER)
 // To do this, we need to get an INPUT KEY (which has the NFT and metadata of the Domain).  Get the Input Key, then Send the input Key to Do The Name Resolution
 
+// resolve the input domain key to the wallet that holds it
+
 // 1. Get the Input Key
 const getDomainKey = async (domain) => {
    // Get the hash of the domain name
