@@ -15,7 +15,10 @@ This builds the `Cargo.lock` file and the `/target` folder (which contains the a
 And now it is time for:
 
 ```
-% cargo running
+% cargo run
+    Finished dev [unoptimized + debuginfo] target(s) in 0.05s
+    Running `target/debug/helloworld`
+Hello, world!
 ```
 
 woo-hoo
