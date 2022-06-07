@@ -58,6 +58,18 @@ console.log("getDomainKey(accountName) - ", getDomainKey(accountName));
 console.log("getDomainKey(domain) - ", getDomainKey(domain));
 
 
+// 2. Send the Input Key (to Do The Name Resolution) and find out which wallet!
 
+const main = async () => {
+  const connection = new Connection(clusterApiUrl("mainnet-beta"), "confirmed");
+  const { inputDomainKey } = await getDomainKey(accountName.replace(".sol", ""));
+  // next perform name registry lookup:
+  const registry = await NameRegistryState.retrieve(connection, inputDomainKey)
+  console.log(registry.owner) // <-- encdoed 8bit array
+  // PublicKey {
+  //   _bn: <BN: c07839819346478004b3b5daf179d95a50f6c640c87ec2546c0800406b013bd2>
+  // }
+  console.log(registry.owner.toBase58()) // <-- DxKc73eJX5J1kY5ND69hnLs7ox64Q2exN3BVUWxBtBjo
+}
 
-// 2. Send the Input Key (to Do The Name Resolution)
+main();
