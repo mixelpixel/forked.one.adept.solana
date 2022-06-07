@@ -18,7 +18,7 @@ const domain = "nomey.sol"
 // Identify in code what the acceptable signature looks like:
 // The exact, trusted signature:
 
-// Address of the SOL TLD
+// Address of the SOL TLD (TOP LEVEL DOMAIN) AUTHORITY
 const SOL_TLD_AUTHORITY = new PublicKey(
     "58PwtjSDuFHuUkYjH9BYnnQKHfwo9reZhC2zMJv9JPkx" // <-- actually goes with: "nomey.sol"
 );
@@ -63,6 +63,7 @@ console.log("getDomainKey(domain) - ", getDomainKey(domain));
 const main = async () => {
   const connection = new Connection(clusterApiUrl("mainnet-beta"), "confirmed");
   const { inputDomainKey } = await getDomainKey(accountName.replace(".sol", ""));
+  // const { inputDomainKey } = await getDomainKey(domain.replace(".sol", ""));
   // next perform name registry lookup:
   const registry = await NameRegistryState.retrieve(connection, inputDomainKey)
   console.log(registry.owner) // <-- encdoed 8bit array
