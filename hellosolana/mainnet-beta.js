@@ -12,7 +12,7 @@ const {
 // const Base58 = require('Base58');
 const bs58 = require('bs58');
 require('dotenv').config(); // https://www.npmjs.com/package/dotenv
-// console.log(process.env); // Object w/all it's key:value pairs
+console.log(process.env); // Object w/all it's key:value pairs
 // console.log(process.env.PRIVATE_KEY); // if no variable, `undefined`
 // console.log(process.env.PRIVATE_KEY ?? ""); // if the value of the left side of the null coalescing operator is null (i.e. the key at .procerss.env isn't in the env file - there's no match), then print and empty string (?? is the null coalescing operator)
 
@@ -55,9 +55,6 @@ console.log('secretKey:', secretKey);
 
 
 
-
-
-
 /* From Solana lessons: https://github.com/Unboxed-Software/solana-course/blob/main/content/intro-to-writing-data.md */
 const ownerKeypair = Keypair.generate();
 console.log('ownerKeypair = ', ownerKeypair);
@@ -76,9 +73,11 @@ console.log('env secret', secret);
 console.log(typeof secret);
 console.log(Array.isArray(secret));
 const secretKey3 = Uint8Array.from(secret)
-// // const keypairFromSecretKey = Keypair.fromSecretKey(secretKey3)
-const pubAddy = process.env.PUB_ADDY ?? ""
-console.log(pubAddy);
+console.log(secretKey3);
+// const keypairFromSecretKey = Keypair.fromSecretKey(secretKey3)
+const pubAddy = JSON.stringify(process.env.PUB_ADDY ?? "")
+console.log("pubAddy", pubAddy.toBase58());
+console.log(typeof pubAddy)
 
 
 
@@ -104,27 +103,27 @@ const getWalletBalance = async () => {
     }
 }
 
-const airDropSol = async () => {
-    try {
-        // put the connection in place
-        const connection = new Connection(clusterApiUrl('devnet'), "confirmed")
-        // use the public key address (so we can get the balance)
-        const myWallet = await Keypair.fromSecretKey(secretKey3)
-
-        // request an airdrop of devnet SOL
-        // const airDropSignatureResult = await connection.requestAirdrop(new PublicKey(myWallet.publicKey), 2 * LAMPORTS_PER_SOL)
-        // await connection.confirmTransaction(airDropSignatureResult) // <-- OLD STYLE, USE BELOW INSTEAD:
-        const fromAirDropSignature = await connection.requestAirdrop(new PublicKey(myWallet.publicKey), 2 * LAMPORTS_PER_SOL);
-        const latestBlockHash = await connection.getLatestBlockhash();
-        await connection.confirmTransaction({
-            blockhash: latestBlockHash.blockhash,
-            lastValidBlockHeight: latestBlockHash.lastValidBlockHeight,
-            signature: fromAirDropSignature,
-        });
-    } catch (err) {
-        console.log(err)
-    }
-}
+// const airDropSol = async () => {
+//     try {
+//         // put the connection in place
+//         const connection = new Connection(clusterApiUrl('mainnet'), "confirmed")
+//         // use the public key address (so we can get the balance)
+//         const myWallet = await Keypair.fromSecretKey(secretKey3)
+//
+//         // request an airdrop of devnet SOL
+//         // const airDropSignatureResult = await connection.requestAirdrop(new PublicKey(myWallet.publicKey), 2 * LAMPORTS_PER_SOL)
+//         // await connection.confirmTransaction(airDropSignatureResult) // <-- OLD STYLE, USE BELOW INSTEAD:
+//         const fromAirDropSignature = await connection.requestAirdrop(new PublicKey(myWallet.publicKey), 2 * LAMPORTS_PER_SOL);
+//         const latestBlockHash = await connection.getLatestBlockhash();
+//         await connection.confirmTransaction({
+//             blockhash: latestBlockHash.blockhash,
+//             lastValidBlockHeight: latestBlockHash.lastValidBlockHeight,
+//             signature: fromAirDropSignature,
+//         });
+//     } catch (err) {
+//         console.log(err)
+//     }
+// }
 
 const main = async () => {
     await getWalletBalance();

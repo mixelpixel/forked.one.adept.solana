@@ -5,13 +5,13 @@ https://adept.at/forked/solana-blockchain-development#forked/interact-with-solan
 */
 
 const {
-    Connection,       // https://solana-labs.github.io/solana-web3.js/classes/Connection.html
-    PublicKey,        // https://solana-labs.github.io/solana-web3.js/classes/PublicKey.html
-    clusterApiUrl,    // https://solana-labs.github.io/solana-web3.js/modules.html#clusterApiUrl
-    Keypair,          // https://solana-labs.github.io/solana-web3.js/classes/Keypair.html
-    LAMPORTS_PER_SOL, // https://solana-labs.github.io/solana-web3.js/modules.html#LAMPORTS_PER_SOL
-    Transaction,      // https://solana-labs.github.io/solana-web3.js/classes/Transaction.html
-    Account,          // https://solana-labs.github.io/solana-web3.js/classes/Account.html
+    Connection,
+    PublicKey,
+    clusterApiUrl,
+    Keypair,
+    LAMPORTS_PER_SOL,
+    Transaction,
+    Account,
 } = require("@solana/web3.js");
 
 const newPair = new Keypair();
