@@ -76,9 +76,17 @@ const secretKey3 = Uint8Array.from(secret)
 console.log(secretKey3);
 // const keypairFromSecretKey = Keypair.fromSecretKey(secretKey3)
 const pubAddy = JSON.stringify(process.env.PUB_ADDY ?? "")
-console.log("pubAddy", pubAddy.toBase58());
+console.log("pubAddy", pubAddy); // <-- 6MoX4kcNrC75Rihp6xfB36Zv5ePp4xKg7Lr3ka6TfefX
 console.log(typeof pubAddy)
-
+console.log(typeof '6MoX4kcNrC75Rihp6xfB36Zv5ePp4xKg7Lr3ka6TfefX')
+// let x = new PublicKey(Buffer.from('6MoX4kcNrC75Rihp6xfB36Zv5ePp4xKg7Lr3ka6TfefX'))
+let x = new PublicKey('6MoX4kcNrC75Rihp6xfB36Zv5ePp4xKg7Lr3ka6TfefX')
+// let x = new PublicKey(`${pubAddy}`)
+// let x = new PublicKey(pubAddy.toString()).toBase58()
+// let x = new PublicKey(pubAddy.toString().toBuffer())
+console.log(x)
+// <Buffer 4f 9e a6 37 a9 d2 40 1b 19 70 6e f3 82 d2 82 ae 18 0e bf 65 ef 2c a2 34 21 08 68 d1 6a 43 ea 5e>
+console.log(new PublicKey(x))
 
 
 
@@ -92,11 +100,12 @@ const getWalletBalance = async () => {
         const myWallet = await Keypair.fromSecretKey(secretKey3)
 
         // const walletBalance = await connection.getBalance(new PublicKey(myWallet.publicKey))
-        const walletBalance = await connection.getBalance(new PublicKey(pubAddy)) // <-- USING MY WALLET (W/ACTUAL SOL) FROM THE .ENV VARIABLE!
+        const walletBalance = await connection.getBalance(new PublicKey(x)) // <-- USING MY WALLET (W/ACTUAL SOL) FROM THE .ENV VARIABLE!
 
         console.log(
             // `Wallet address is ${myWallet.publicKey.toString()} and balance is ${walletBalance}`
-            `Wallet address is ${new PublicKey(pubAddy).toString()} and balance is ${walletBalance / LAMPORTS_PER_SOL}`
+            `Wallet address is ${new PublicKey(x).toString()} and balance is ${walletBalance / LAMPORTS_PER_SOL}`
+            // Wallet address is 6MoX4kcNrC75Rihp6xfB36Zv5ePp4xKg7Lr3ka6TfefX and balance is 1.1
         )
     } catch (err) {
         console.log(err)
@@ -127,7 +136,7 @@ const getWalletBalance = async () => {
 
 const main = async () => {
     await getWalletBalance();
-    // await airDropSol();
+    // await airDropSol(); // <-- NOT ON MAINNET-BETA
     // await getWalletBalance();
 }
 
