@@ -6,6 +6,14 @@ https://doc.rust-lang.org/cargo/
 
 We'll use Rust to compile (i.e. build) our programs, and then run them.
 
+## Cargo.toml
+
+Just a configuration file for dependencies and such, like a package.json file for managing Node packages.
+
+per: https://en.wikipedia.org/wiki/TOML
+
+> The name "TOML" is an acronym for "Tom's Obvious, Minimal Language"[5] referring to its creator, Tom Preston-Werner.
+
 # Anchor
 
 ## 6/7/2022 Note:
