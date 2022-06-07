@@ -2,6 +2,13 @@
  * Starter code: https://adept.at/forked/solana-blockchain-development#forked/perform-an-sns-lookup-on-solana-using-javascript
  * https://bonfida.org/#/
  * terminal command: `nslookup` "Name Service Lookup"
+ * NPM package: https://www.npmjs.com/package/@solana/spl-name-service `npm i @solana/spl-name-service`
+ * Solana Docs: https://spl.solana.com/name-service
+ * Bonafida Guide: https://github.com/Bonfida/solana-name-service-guide
+ * Codesandbox: https://codesandbox.io/examples/package/@solana/spl-name-service
+ *
+ *
+ * What follows is the starter code from the lesson page
  */
 
 const {
@@ -14,6 +21,7 @@ const {
     PublicKey,
     clusterApiUrl,
 } = require("@solana/web3.js");
+
 // Address of the SOL TLD
 const SOL_TLD_AUTHORITY = new PublicKey(
     "58PwtjSDuFHuUkYjH9BYnnQKHfwo9reZhC2zMJv9JPkx"
