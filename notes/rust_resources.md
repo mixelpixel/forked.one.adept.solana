@@ -16,7 +16,7 @@ per: https://en.wikipedia.org/wiki/TOML
 
 # Anchor
 
-## NOTE: Project Serum GitHub doc
+## NOTE: Project Serum GitHub Doc
 
 sunsetting: https://project-serum.github.io/anchor/getting-started/introduction.html
 
