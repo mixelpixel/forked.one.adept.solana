@@ -36,6 +36,8 @@ const getInputKey = async (input) => {
         undefined,
         SOL_TLD_AUTHORITY
     );
+    //PDK Added the log:
+    console.log({ inputDomainKey: inputDomainKey, hashedInputName: hashed_input_name });
     return { inputDomainKey: inputDomainKey, hashedInputName: hashed_input_name };
 };
 
