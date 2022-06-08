@@ -8,7 +8,7 @@ We'll use Rust to compile (i.e. build) our programs, and then run them.
 
 ## Cargo.toml
 
-Just a configuration file for dependencies and such, like a package.json file for managing Node packages.
+A .toml or "TOML" file is just a configuration file for dependencies and such, like a package.json file for managing Node packages.
 
 per: https://en.wikipedia.org/wiki/TOML
 
@@ -43,3 +43,11 @@ https://book.anchor-lang.com/
 https://docs.rs/solana-program/latest/solana_program/#
 
 > The base library for all Solana on-chain Rust programs.
+
+## Packages & crates
+
+https://doc.rust-lang.org/book/ch07-01-packages-and-crates.html
+
+> A *package* is one or more crates that provide a set of functionality. A package contains a Cargo.toml file that describes how to build those crates.
+
+> A *crate* can be a binary crate or a library crate. Binary crates are programs you can compile to an executable that you can run, such as a command-line program or a server. They must have a function called `main` that defines what happens when the executable runs. All the crates we’ve created so far have been binary crates.
