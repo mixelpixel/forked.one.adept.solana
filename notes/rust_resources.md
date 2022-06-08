@@ -16,9 +16,9 @@ per: https://en.wikipedia.org/wiki/TOML
 
 # Anchor
 
-## NOTE: Project Serum GitHub Doc
+## NOTE: Project Serum GitHub Doc is being sunset:
 
-sunsetting: https://project-serum.github.io/anchor/getting-started/introduction.html
+https://project-serum.github.io/anchor/getting-started/introduction.html
 
 > This documentation is being sunset in favor of [The Anchor Book](https://book.anchor-lang.com/).  At this point in time, either documentation source may contain information that the other does not.
 

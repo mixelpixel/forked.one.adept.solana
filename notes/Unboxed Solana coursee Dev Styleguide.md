@@ -31,3 +31,7 @@ General: code blocks
 - always use language specifiers, e.g. ` ```rust`
 - unless critical, lose the semi-colons `;`
 - newline separate long lists and objects of parameters
+
+General:
+- npm vs yarn: npm
+- 

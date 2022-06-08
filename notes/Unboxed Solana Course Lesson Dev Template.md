@@ -13,7 +13,8 @@
 - Use B to...
 - Explain X
 - Describe Y
-- NOTE: The italics description of this section will stay with the lesson.  The following ones, however, should be removed (i.e. remove the descriptions for the TL;DR, Overview, Demo, and Challenge)
+- Use sentence casing (resist the urge to capitalize all concept or coding terms)
+- **NOTE**: The italics description of this section will stay with the lesson.  The following ones, however, should be removed (i.e. remove the descriptions for the TL;DR, Overview, Demo, and Challenge)
 
 # TL;DR
 
