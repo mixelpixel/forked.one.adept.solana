@@ -53,3 +53,15 @@ https://doc.rust-lang.org/book/ch07-01-packages-and-crates.html
 > A *crate* can be a binary crate or a library crate. Binary crates are programs you can compile to an executable that you can run, such as a command-line program or a server. They must have a function called `main` that defines what happens when the executable runs. All the crates we’ve created so far have been binary crates.
 
 > *Library crates* don’t have a `main` function, and they don’t compile to an executable. They define functionality intended to be shared with multiple projects.
+
+# Macros
+
+https://doc.rust-lang.org/book/ch19-06-macros.html
+
+> Fundamentally, macros are a way of writing code that writes other code, which is known as metaprogramming.
+
+# Solana Playground
+
+https://beta.solpg.io/
+
+>
